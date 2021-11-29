@@ -20,9 +20,10 @@
 body {
     position: relative;
     margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    transition: .5s;
+    transition: .5s
 }
 
 a {
@@ -80,7 +81,17 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden
+    overflow: scroll
+}
+
+.nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.nav {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .nav_logo,
@@ -126,7 +137,7 @@ a {
 }
 
 .body-pd {
-    padding-left: calc(var(--nav-width))
+    padding-left: calc(var(--nav-width) + 1rem)
 }
 
 .active {
@@ -149,7 +160,7 @@ a {
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 0rem) /* ici pour padding */
+        padding-left: calc(var(--nav-width) + 2rem)
     }
 
     .header {
@@ -168,7 +179,7 @@ a {
 
     .l-navbar {
         left: 0;
-        padding: 1rem 1rem 0 0;
+        padding: 1rem 1rem 0 0
     }
 
     .show {
@@ -178,4 +189,18 @@ a {
     .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
     }
+
 }
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+
+
