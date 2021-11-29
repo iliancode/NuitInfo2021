@@ -126,7 +126,7 @@ a {
 }
 
 .body-pd {
-    padding-left: calc(var(--nav-width) + 1rem)
+    padding-left: calc(var(--nav-width) + 0em)
 }
 
 .active {
@@ -176,6 +176,6 @@ a {
     }
 
     .body-pd {
-        padding-left: calc(var(--nav-width))
+        padding-left: calc(var(--nav-width) + 188px)
     }
 }
