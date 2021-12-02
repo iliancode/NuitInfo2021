@@ -35,6 +35,72 @@ jQuery(function ($) {
     }, false);
 })();
 
+
+// formulaires dynamiques
+var j = 1;
+$(function () {
+    $(document).on('click', '.btn-add', function (e) {
+        e.preventDefault();
+        j += 1
+
+        var dynaForm = $('.formDynamique'),
+            currentEntry = $(this).parents('.entry');
+        newEntry = (currentEntry.clone()).appendTo(dynaForm);
+
+        $("#compteur").attr("id", "compteur" + j);
+        $("#compteur" + j).html(j - 1);
+        $("#compteur").attr("id", "compteur").html(j);
+
+        newEntry.find('input').val('');
+        dynaForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span>Supprimer</span>');
+    })
+
+        .on('click', '.btn-remove', function (e) {
+            /*             i = i - 1
+                        $("#compteur").attr("id", "compteur").html(i); */
+            $(this).parents('.entry:first').remove();
+
+            e.preventDefault();
+            return false;
+        });
+});
+
+// formulaires dynamiques
+var i = 1;
+$(function () {
+    $(document).on('click', '.btn-add2', function (e) {
+        e.preventDefault();
+        i += 1
+
+        var dynaForm = $('.formDynamique2'),
+            currentEntry = $(this).parents('.entry2');
+        newEntry = (currentEntry.clone()).appendTo(dynaForm);
+
+        $("#compteur2").attr("id", "compteur2" + i);
+        $("#compteur2" + i).html(i - 1);
+        $("#compteur2").attr("id", "compteur2").html(i);
+
+        newEntry.find('input').val('');
+        dynaForm.find('.entry2:not(:last) .btn-add2')
+            .removeClass('btn-add2').addClass('btn-remove2')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span>Supprimer</span>');
+    })
+
+        .on('click', '.btn-remove2', function (e) {
+            /*             i = i - 1
+                        $("#compteur").attr("id", "compteur").html(i); */
+            $(this).parents('.entry2:first').remove();
+
+            e.preventDefault();
+            return false;
+        });
+});
+
+
 // datable en francais
 $(document).ready(function () {
     $('.table-striped').DataTable({
