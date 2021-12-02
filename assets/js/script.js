@@ -37,6 +37,7 @@ jQuery(function ($) {
 
 
 // formulaires dynamiques
+// beateau 
 var j = 1;
 $(function () {
     $(document).on('click', '.btn-add', function (e) {
@@ -52,6 +53,8 @@ $(function () {
         $("#compteur").attr("id", "compteur").html(j);
 
         newEntry.find('input').val('');
+        newEntry.find('select').val('');
+
         dynaForm.find('.entry:not(:last) .btn-add')
             .removeClass('btn-add').addClass('btn-remove')
             .removeClass('btn-success').addClass('btn-danger')
@@ -69,22 +72,25 @@ $(function () {
 });
 
 // formulaires dynamiques
+// sauvé
 var i = 1;
 $(function () {
     $(document).on('click', '.btn-add2', function (e) {
         e.preventDefault();
         i += 1
 
-        var dynaForm = $('.formDynamique2'),
-            currentEntry = $(this).parents('.entry2');
-        newEntry = (currentEntry.clone()).appendTo(dynaForm);
+        var dynaForm2 = $('.formDynamique2'),
+            currentEntry2 = $(this).parents('.entry2');
+        newEntry2 = (currentEntry2.clone()).appendTo(dynaForm2);
 
         $("#compteur2").attr("id", "compteur2" + i);
         $("#compteur2" + i).html(i - 1);
         $("#compteur2").attr("id", "compteur2").html(i);
 
-        newEntry.find('input').val('');
-        dynaForm.find('.entry2:not(:last) .btn-add2')
+        newEntry2.find('input').val('');
+        newEntry2.find('select').val('');
+        
+        dynaForm2.find('.entry2:not(:last) .btn-add2')
             .removeClass('btn-add2').addClass('btn-remove2')
             .removeClass('btn-success').addClass('btn-danger')
             .html('<span>Supprimer</span>');
@@ -103,7 +109,7 @@ $(function () {
 
 // datable en francais
 $(document).ready(function () {
-    $('.table-striped').DataTable({
+    $('#datatable').DataTable({
         "language": {
             "sProcessing": "Traitement en cours...",
             "sSearch": "Rechercher&nbsp;:",
