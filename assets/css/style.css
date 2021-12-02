@@ -5,6 +5,11 @@ body {
   background-color: rgb(236, 236, 236);
 }
 
+.dark-mode {
+  background-color: #424e5c;
+  color: white;
+}
+
 footer {
   margin-top: auto;
 }
@@ -519,13 +524,15 @@ li.sidebar-dropdown {
 }
 
 .first-b-1 {
-  background-color: #464667;
+  margin: 10px 10px 5px 20px;
+  background-color: #ffffff;
   flex: 1;
   border-radius: 20px;
 }
 
 .first-b-2 {
-  background-color: #464667;
+  margin: 10px 10px 5px 5px;
+  background-color: #ffffff;
   flex: 1;
   border-radius: 20px;
 }
