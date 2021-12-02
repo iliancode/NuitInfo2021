@@ -1,12 +1,12 @@
-var mysql = require('mysql');
+var mysql = require("mysql");
 var conn = mysql.createConnection({
-    host: 'mysql-nuitinfo.alwaysdata.net',
-    user: 'nuitinfo', 
-    password: 'nuitinfo2021lab',  
-    database: 'nuitinfo_2021' 
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "nuitinfo",
 });
 conn.connect(function (err) {
-    if (err) throw err;
-    console.log('BDD connecté avec succès !');
+  if (err) throw err;
+  console.log("BDD connecté avec succès !");
 });
 module.exports = conn;
