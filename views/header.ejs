@@ -9,10 +9,16 @@
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.css" />
   <link rel="stylesheet" href="/css/style.css" />
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script
+    src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.11.3/af-2.3.7/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/fc-4.0.0/fh-3.2.0/kt-2.6.4/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sb-1.2.2/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+
+  <script src="/js/script.js" async></script>
+  <script src="/js/datatable.js" async></script>
 </head>
 
 <body>
@@ -23,153 +29,153 @@
           <a href="#">Sauveteur du Dunkerquois</a>
         </div>
         <div class="sidebar-header">
-        <!-- sidebar-search  -->
-        <div class="sidebar-menu">
-          <ul>
-            <li class="header-menu">
-              <span>General</span>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="fa fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="#">Dashboard 1
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">Dashboard 2</a>
-                  </li>
-                  <li>
-                    <a href="#">Dashboard 3</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>E-commerce</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="#">Products
+          <!-- sidebar-search  -->
+          <div class="sidebar-menu">
+            <ul>
+              <li class="header-menu">
+                <span>General</span>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-tachometer-alt"></i>
+                  <span>Dashboard</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Dashboard 1
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Dashboard 2</a>
+                    </li>
+                    <li>
+                      <a href="#">Dashboard 3</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span>E-commerce</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Products
 
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">Orders</a>
-                  </li>
-                  <li>
-                    <a href="#">Credit cart</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="far fa-gem"></i>
-                <span>Components</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="#">General</a>
-                  </li>
-                  <li>
-                    <a href="#">Panels</a>
-                  </li>
-                  <li>
-                    <a href="#">Tables</a>
-                  </li>
-                  <li>
-                    <a href="#">Icons</a>
-                  </li>
-                  <li>
-                    <a href="#">Forms</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="fa fa-chart-line"></i>
-                <span>Charts</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="#">Pie chart</a>
-                  </li>
-                  <li>
-                    <a href="#">Line chart</a>
-                  </li>
-                  <li>
-                    <a href="#">Bar chart</a>
-                  </li>
-                  <li>
-                    <a href="#">Histogram</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="sidebar-dropdown">
-              <a href="#">
-                <i class="fa fa-globe"></i>
-                <span>Maps</span>
-              </a>
-              <div class="sidebar-submenu">
-                <ul>
-                  <li>
-                    <a href="#">Google maps</a>
-                  </li>
-                  <li>
-                    <a href="#">Open street map</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="header-menu">
-              <span>Extra</span>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-book"></i>
-                <span>Documentation</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-calendar"></i>
-                <span>Calendar</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-folder"></i>
-                <span>Examples</span>
-              </a>
-            </li>
-          </ul>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Orders</a>
+                    </li>
+                    <li>
+                      <a href="#">Credit cart</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="far fa-gem"></i>
+                  <span>Components</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">General</a>
+                    </li>
+                    <li>
+                      <a href="#">Panels</a>
+                    </li>
+                    <li>
+                      <a href="#">Tables</a>
+                    </li>
+                    <li>
+                      <a href="#">Icons</a>
+                    </li>
+                    <li>
+                      <a href="#">Forms</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-chart-line"></i>
+                  <span>Charts</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Pie chart</a>
+                    </li>
+                    <li>
+                      <a href="#">Line chart</a>
+                    </li>
+                    <li>
+                      <a href="#">Bar chart</a>
+                    </li>
+                    <li>
+                      <a href="#">Histogram</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-globe"></i>
+                  <span>Maps</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Google maps</a>
+                    </li>
+                    <li>
+                      <a href="#">Open street map</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header-menu">
+                <span>Extra</span>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-book"></i>
+                  <span>Documentation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-calendar"></i>
+                  <span>Calendar</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-folder"></i>
+                  <span>Examples</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <!-- sidebar-content  -->
-      <div class="sidebar-footer">
-        <a href="#">
-          <i class="fa fa-bell"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-envelope"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-cog"></i>
-        </a>
-        <a href="#">
-          <i class="fa fa-power-off"></i>
-        </a>
-      </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+          <a href="#">
+            <i class="fa fa-bell"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-envelope"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-cog"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
     </nav>
