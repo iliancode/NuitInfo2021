@@ -564,3 +564,6 @@ legend {
     display: none;
   }
 }
+.page-wrapper {
+  background-color: white;
+} 
