@@ -16,6 +16,17 @@ module.exports = {
         res.render('./ajouterSauvetage')
     },
 
+    // afficher formulaires modif
+    afficher_modifierBateau: function (req, res) {
+        res.render('./modifierBateau')
+    },
+    aficher_modifierSauveuteur: function (req, res) {
+        res.render('./modifierSauveuteur')
+    },
+    afficher_modifierSauvetage: function (req, res) {
+        res.render('./modifierSauvetage')
+    },
+
     //afficher listes
     afficher_listeBateaux: function (req, res) {
         res.render('./listeBateaux')
