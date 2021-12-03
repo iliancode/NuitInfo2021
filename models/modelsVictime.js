@@ -15,7 +15,7 @@ async function lireVictime(id) {
     })
 }
 
-async function mettreAJourVictime(nom,prenom,id) {
+async function modifierVictime(nom,prenom,id) {
     db.query(`UPDATE victimes SET Victime_Nom=${nom},prenom=${prenom} WHERE Victime_id=${id}`,(err,result) => {
         if (err) throw err;
     })
@@ -30,6 +30,6 @@ async function supprimerVictime(id) {
 module.exports = {
     creerVictime,
     lireVictime,
-    mettreAJourVictime,
+    modifierVictime,
     supprimerVictime
 }

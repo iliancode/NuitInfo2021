@@ -15,7 +15,7 @@ async function lireSauveteur(id) {
     })
 }
 
-async function mettreAJourSauveteur(nom,prenom,id) {
+async function modifierSauveteur(nom,prenom,id) {
     db.query(`UPDATE sauveteures SET nom=${nom},prenom=${prenom} WHERE Sauveteur_id=${id}`,(err,result) => {
         if (err) throw err;
     })
@@ -30,6 +30,6 @@ async function supprimerSauveteur(id) {
 module.exports = {
     creerSauveteur,
     lireSauveteur,
-    mettreAJourSauveteur,
+    modifierSauveteur,
     supprimerSauveteur
 }
