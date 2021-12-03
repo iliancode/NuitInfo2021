@@ -646,7 +646,17 @@ input:checked + .slider:before {
 }
 
 .rounded-0 {
-  height: 35px; 
-  width: 35px; 
-  margin-left: 0px; 
+  height: 35px;
+  width: 35px;
+  margin-left: 0px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(236, 28, 255, 0.25);
+  border-color: #9c1d96;
+}
+
+.page-item.active .page-link {
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
