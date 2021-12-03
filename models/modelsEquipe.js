@@ -32,6 +32,6 @@ async function supprimerEquipe(id) {
 module.exports = {
     creerEquipe,
     lireEquipe,
-    modifierquipe,
+    modifierEquipe,
     supprimerEquipe
 }
