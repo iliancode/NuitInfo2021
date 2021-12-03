@@ -6,6 +6,9 @@ var ctrlBateaux = require('../controllers/ctrlBateaux')
 var ctrlSauveteur = require('../controllers/ctrlSauveteur')
 var ctrlEquipe = require('../controllers/ctrlEquipe')
 var ctrlSauvetage = require('../controllers/ctrlSauvetage')
+const ctrlMarqueModele = require('../controllers/ctrlMarqueModele');
+const ctrlNaufrage = require('../controllers/ctrlNaufrage');
+const ctrlVictimes = require('../controllers/ctrlVictimes');
 
 routeur.get('/', ctrlAccueil.afficher_accueil)
 //formulaires
@@ -26,5 +29,14 @@ routeur.get('/ajouter_sauvetage', ctrlAccueil.afficher_ajouterSauvetage)
     .get('/modifier_sauvetage', ctrlAccueil.afficher_modifierSauvetage)
     .get('/liste_sauvetages', ctrlAccueil.afficher_listeSauvetages)
 
+routeur.get('/liste_modeles', ctrlMarqueModele.afficher_liste_modeles)
+    .get('/ajouter_modele', ctrlMarqueModele.afficher_ajouter_modele)
+
+routeur.get('/liste_marques', ctrlMarqueModele.afficher_liste_marques)
+    .get('/ajouter_marque', ctrlMarqueModele.afficher_ajouter_marque)
+
+routeur.get('/liste_naufrages', ctrlNaufrage.afficher_liste_naufrages)
+
+routeur.get('/liste_victime', ctrlVictimes.afficher_liste_victime)
 
 module.exports = routeur;
