@@ -1,0 +1,82 @@
+<%- include('header') %>
+    <!-- sidebar-wrapper  -->
+    <main class="page-content">
+        <div class="container-fluid">
+            <div class="container">
+        
+
+      
+                <!-- Titre -->
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-xl-12 col-md-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="">Ajouter un bateau</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row mt-3">
+                    <form action="/ajouter_bateau"  method="POST" class="container" id="needs-validation" name="form_ordonnance" novalidate>
+                        <!-- Client -->
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label class="text-inverse" for="inputNom">Nom du bateau</label>
+                                    <input type="text" class="form-control" id="inputNom" name="inputNom" placeholder="Nom du bateau" required>
+                                    <div class="invalid-feedback">
+                                        Veuillez fournir un nom valide.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Médecin -->
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label class="text-inverse" for="selectMarque">Marque</label>
+                                    <select class="custom-select d-block form-control" id="selectMarque" name="selectMarque"
+                                        required>
+                                        <option value="" disabled selected>Choisir une marque</option>
+                                        <option value="">Choisir une marque</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Veuillez fournir une marque valide.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Pathologie -->
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label class="text-inverse" for="selectModele">Modele</label>
+                                    <select class="custom-select d-block form-control" id="selectModele"
+                                        name="selectModele" required>
+                                        <option value="" disabled selected>Choisir un modele</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Veuillez fournir un  modele valide.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Validation du formulaire -->
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-12 text-center">
+                                <button class="btn btn-primary" style="width: 100%;" type="submit">Valider le
+                                    formulaire</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('footer') %>
