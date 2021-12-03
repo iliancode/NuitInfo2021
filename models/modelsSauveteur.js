@@ -39,4 +39,11 @@ module.exports = {
             return callback(data);
         });
     },
+    lireUnSauveteur: function (callback) {
+        var sql = 'SELECT * FROM sauveteurs WHERE Sauveteur_id = ?';
+        db.query(sql, myID, function(err,data,fields){
+            if(err)throw err;
+            return callback(data);
+        });
+    },
 }
