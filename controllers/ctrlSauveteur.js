@@ -9,6 +9,6 @@ module.exports = {
     
     afficher_listeSauveteurs:async function (req,res) {
         let donnees = await modelsSauveteur.recupererSauveteur();
-        res.render('./liste_sauveteurs', {donnees : donnees})
+        res.render('liste_sauveteurs.ejs', {donnees : donnees})
     }
 }
