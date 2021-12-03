@@ -71,4 +71,25 @@ $(function () {
         });
 });
 
+$('#selectModele').change(function() {
+  opt = $(this).val();
+  if (opt=="new") {
+      $('#msgbox').html(`
+      <input type="text" class="form-control" id="inputNewModel" name="inputNewModel"
+          placeholder="Nouvelle Marque" required />
+      <div class="invalid-feedback">Veuillez fournir un modele valid.</div>`);
+  }
+});
+
+$('#selectMarque').change(function() {
+  opt = $(this).val();
+  if (opt=="new") {
+      $('#msgbox2').html(`
+      <input type="text" class="form-control" id="inputNewMarque" name="inputNewMarque"
+          placeholder="Nouveau Model" required />
+      <div class="invalid-feedback">Veuillez fournir une marque valid.</div>`);
+  }
+});
+
+
 
