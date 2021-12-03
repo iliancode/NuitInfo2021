@@ -1,5 +1,6 @@
 :root {
   --dark-background-color: rgb(255, 255, 255);
+  --trans-transition-duration: 0.7s;
 }
 
 body {
@@ -7,19 +8,14 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(236, 236, 236);
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
   --dark-background-color: #303b46;
-  transition-duration: 0.7s;
-}
-
-.dark-mode-container {
-  background-color: #6d8097;
-  color: white;
+  --trans-transition-duration: 0s;
 }
 
 footer {
@@ -509,7 +505,7 @@ li.sidebar-dropdown {
 ----------------------------------------------------- */
 .card {
   background-color: var(--dark-background-color);
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .equal-height-container {
@@ -531,7 +527,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .first-b {
@@ -545,7 +541,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .first-b-2 {
@@ -553,7 +549,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 legend {
