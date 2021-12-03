@@ -7,7 +7,7 @@ async function creerBateau(nom, idMarque, idModele, type, constructeur) {
     if (err) throw err;
   });
 }
-
+ 
 async function lireBateau(id) {
     return new Promise((resolve,reject) => {
         db.query(`SELECT * FROM bateaux WHERE Bateau_id=${id}`,(err,result) => {
