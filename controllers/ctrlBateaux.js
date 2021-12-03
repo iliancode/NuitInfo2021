@@ -51,7 +51,16 @@ module.exports = {
     afficher_modifierBateau: function (req, res) {
         res.render('./modifierBateau')
     },
-    afficher_listeBateaux: function (req, res) {
-        res.render('./listeBateaux')
-    }
+    afficher_listeBateaux:async function (req,res) {
+            let donnees = await modelBateaux.recupererBateau()
+            console.log(donnees)
+            res.render("listeBateaux.ejs", {donnees : donnees})
+        } ,
+    
+        delete_fiche_medecin:async function (req,res) {
+            
+            console.log(donnees)
+            res.render("listeBateaux.ejs", {donnees : donnees})
+        } 
+        
 }

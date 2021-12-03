@@ -42,58 +42,56 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        <% donnees.forEach(function(user){ %>
                                             <tr>
                                                 <td>
                                                     <ul class="list-inline m-0">
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-secondary btn-sm rounded-0" type="button"
-                                                                data-toggle="modal" data-target="#detail_"
+                                                                data-toggle="modal" data-target="#detail_<%= user.Bateau_id %>"
                                                                 title="Détails"><i class="fa fa-eye"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-success btn-sm rounded-0" type="button"
                                                                 title="Modifier"
-                                                                onclick="location.href = 'modifierBateau/';"><i
+                                                                onclick="location.href = 'modifierBateau/<%= user.Bateau_id %>';"><i
                                                                     class="fa fa-edit"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
         
                                                             <button class="btn btn-danger btn-sm rounded-0" type="button"
                                                                 data-toggle="modal"
-                                                                data-target="#supprimer_"
+                                                                data-target="#supprimer_<%= user.Bateau_id %>"
                                                                 title="Supprimer"><i class="fa fa-trash"></i></button>
                                                             </form>
                                                         </li>
                                                     </ul>
                                                 </td>
                                                 <td>
-                                                    DONALD
-                                                        yorick (18)
+                                                    <%= user.Bateau_nom %>
                                                 </td>
                                                 <td>
-                                                    M
-                                                </td>
-                                                <td class="dispTel">
-                                                    0666666666
+                                                    <%= user.Marque_nom %>
                                                 </td>
                                                 <td>
-                                                    38100
-                                                        GRENOBLE
+                                                    <%= user.Modele_nom %>
+                                                </td>
+                                                <td>
+                                                    <%= user.Bateau_type %>
                                                 </td>
                                             </tr>
         
-                                            
+                                            <% })%>  
                                     </tbody>
                                 </table>
         
-                                
+                                <% donnees.forEach(function(user){ %>
                                     <!-- Détails -->
-                                    <div class="modal fade" id="detail_">
+                                    <div class="modal fade" id="detail_<%= user.Bateau_id %>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Détails client N°
+                                                    <h5 class="modal-title">Détails client N°<%= user.Bateau_id %>
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
@@ -116,19 +114,19 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Fermer</button>
-                                                    <button type="button" class="btn btn-secondary"
-                                                        onclick="location.href = 'modifierBateau/';">Fiche</button>
+                                                    <button type="submit" class="btn btn-secondary"
+                                                        onclick="location.href = '/modifierBateau/<%= user.Bateau_id %>';">Fiche</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
         
                                     <!-- Supprimer -->
-                                    <div class="modal fade" id="supprimer_">
+                                    <div class="modal fade" id="supprimer_<%= user.Bateau_id %>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Supprimer bateau n°
+                                                    <h5 class="modal-title">Supprimer bateau n°<%= user.Bateau_id %>
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
@@ -141,7 +139,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-success"
                                                         data-dismiss="modal">Non</button>
-                                                    <form action="suprr_bateau/"
+                                                    <form action="/suprr_bateau/<%= user.Bateau_id %>"
                                                         method="post">
                                                         <button type="submit" class="btn btn-danger" name="supp"
                                                             value="supp">Oui</button>
@@ -150,7 +148,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+                                    <% })%>  
                             </div>
                         </div>
                     </div>
