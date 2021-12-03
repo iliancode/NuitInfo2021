@@ -5,8 +5,9 @@ module.exports = {
         res.render('./modifierEquipe')
     },
     
-    afficher_listeEquipes: function (req, res) {
-        res.render('./listeEquipes')
-    },
+    afficher_listeEquipes:async function (req,res) {
+        let donnees = await modelEquipe.recupererEquipe();
+        res.render('./liste_equipes', {donnees : donnees})
+    }
 
 }
