@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* background-color: rgb(236, 236, 236); */
+  background-color: rgb(236, 236, 236);
 }
 
 .dark-mode-back {
@@ -574,6 +574,3 @@ legend {
     display: none;
   }
 }
-.page-wrapper {
-  background-color: white;
-} 
