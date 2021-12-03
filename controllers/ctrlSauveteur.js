@@ -1,4 +1,4 @@
-var modelSauveuteur = require('../models/modelsSauveteur');
+var modelsSauveteur = require('../models/modelsSauveteur');
 module.exports = {
     afficher_ajouterSauveteur: function (req, res) {
         res.render('./ajouterSauveteur')
@@ -20,4 +20,9 @@ module.exports = {
         res.redirect("./liste_sauveteurs");
       },
     
+    
+    afficher_listeSauveteurs:async function (req,res) {
+        let donnees = await modelsSauveteur.recupererSauveteur();
+        res.render('./liste_sauveteurs', {donnees : donnees})
+    }
 }

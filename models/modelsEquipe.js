@@ -28,10 +28,19 @@ async function supprimerEquipe(id) {
         if (err) throw err;
     })
 }
+async function recupererEquipe() {
+    return new Promise((resolve,reject) => {
+        db.query(`SELECT * FROM equipes, bateaux, sauveteurs WHERE Equipe_idSauveteur = Sauveteur_id AND Equipe_idBateau = Bateau_id  `,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
 
 module.exports = {
     creerEquipe,
     lireEquipe,
     modifierEquipe,
-    supprimerEquipe
+    supprimerEquipe,
+    recupererEquipe
 }

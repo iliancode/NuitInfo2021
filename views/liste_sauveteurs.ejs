@@ -37,12 +37,11 @@
                                             <th scope="col">Action</th>
                                             <th scope="col">Nom</th>
                                             <th scope="col">Prénom</th>
-                                            <th scope="col">Equipe</th>
-                                            <th scope="col">Nombre sauvé</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        <% donnees.forEach(function(user){ %>
                                             <tr>
                                                 <td>
                                                     <ul class="list-inline m-0">
@@ -68,22 +67,15 @@
                                                     </ul>
                                                 </td>
                                                 <td>
-                                                    DONALD
-                                                        yorick (18)
+                                                    <%= user.Sauveteur_nom %>
                                                 </td>
                                                 <td>
-                                                    M
+                                                    <%= user.Sauveteur_prenom %>
                                                 </td>
-                                                <td class="dispTel">
-                                                    0666666666
-                                                </td>
-                                                <td>
-                                                    38100
-                                                        GRENOBLE
-                                                </td>
+                                                
                                             </tr>
         
-                                            
+                                             <% })%>  
                                     </tbody>
                                 </table>
         
