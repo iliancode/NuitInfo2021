@@ -1,23 +1,53 @@
 <%- include('header') %>
-<!-- sidebar-wrapper  -->
-<main class="page-content">
-  <main class="container-fluid">
-    <!-- Page Content  -->
-    <div style="margin: 0px" class="equal-height-container" id="container">
-      <div class="col-md-12 first">
-        <div class="first-a" id="dark">
-          <p></p>
-        </div>
+  <!-- sidebar-wrapper  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"
+    integrity="sha512-O2fWHvFel3xjQSi9FyzKXWLTvnom+lOYR/AUEThL/fbP4hv1Lo5LCFCGuTXBRyKC4K4DJldg5kxptkgXAzUpvA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <main class="page-content">
+    <main class="container-fluid">
+      <!-- Page Content  -->
+      <div style="margin: 0px" class="equal-height-container" id="container">
+        <div class="col-md-12 first">
+          <div class="first-a" id="dark">
 
-        <!-- Table Box -->
-        <div class="first-b">
-          <!-- Table Left -->
-          <div class="first-b-1" id="dark"></div>
+          </div>
 
-          <!-- Table Right -->
-          <div class="first-b-2" id="dark"></div>
+            <!-- Table Box -->
+            <div class="first-b">
+              <!-- Table Left -->
+              <div class="first-b-1" id="dark">
+                <canvas id="bar-chart" width="auto" height="450"></canvas>
+              </div>
+
+              <script>
+                // Bar chart
+                new Chart(document.getElementById("bar-chart"), {
+                  type: 'bar',
+                  data: {
+                    labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                    datasets: [
+                      {
+                        label: "Population (millions)",
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                        data: [2478, 5267, 734, 784, 433]
+                      }
+                    ]
+                  },
+                  options: {
+                    legend: { display: false },
+                    title: {
+                      display: true,
+                      text: 'Predicted world population (millions) in 2050'
+                    }
+                  }
+                });
+              </script>
+
+              <!-- Table Right -->
+              <div class="first-b-2" id="dark"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   </main>
-</main>
