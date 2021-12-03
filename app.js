@@ -1,13 +1,14 @@
 // inclure les dépendances et middlewares
-const express = require('express')
+const express = require("express");
 
 // activer les dépendances
-let app = express()
-app.set('view engine', 'ejs')
-app.use(express.static('views'))
+let app = express();
+app.set("view engine", "ejs");
+app.use(express.static("views"));
 
-app.use('/js', express.static(__dirname + '/assets/js')); // redirect bootstrap JS
-app.use('/css', express.static(__dirname + '/assets/css')); // redirect CSS bootstrap
+app.use("/images", express.static(__dirname + "/assets/images")); // redirect CSS bootstrap
+app.use("/js", express.static(__dirname + "/assets/js")); // redirect bootstrap JS
+app.use("/css", express.static(__dirname + "/assets/css")); // redirect CSS bootstrap
 
-app.listen(3000, () => console.log('Le serveur est actif !'))
-app.use('/', Routeur = require('./routes/routes'))
+app.listen(3000, () => console.log("Le serveur est actif !"));
+app.use("/", (Routeur = require("./routes/routes")));

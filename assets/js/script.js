@@ -1,3 +1,4 @@
+//menu
 jQuery(function ($) {
   $(".sidebar-dropdown > a").click(function () {
     $(".sidebar-submenu").slideUp(200);
@@ -33,3 +34,41 @@ jQuery(function ($) {
         }, false);
     }, false);
 })();
+
+
+// formulaires dynamiques
+// bateau sauveuteur 
+var j = 1;
+$(function () {
+    $(document).on('click', '.btn-add', function (e) {
+        e.preventDefault();
+        j += 1
+
+        var dynaForm = $('.formDynamique'),
+            currentEntry = $(this).parents('.entry');
+        newEntry = (currentEntry.clone()).appendTo(dynaForm);
+
+        $("#compteur").attr("id", "compteur" + j);
+        $("#compteur" + j).html(j - 1);
+        $("#compteur").attr("id", "compteur").html(j);
+
+        newEntry.find('input').val('');
+        newEntry.find('select').val('');
+
+        dynaForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span>x</span>');
+    })
+
+        .on('click', '.btn-remove', function (e) {
+            /*             i = i - 1
+                        $("#compteur").attr("id", "compteur").html(i); */
+            $(this).parents('.entry:first').remove();
+
+            e.preventDefault();
+            return false;
+        });
+});
+
+
