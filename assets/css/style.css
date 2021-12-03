@@ -649,8 +649,8 @@ input:checked + .slider:before {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 0.2rem rgba(236, 28, 255, 0.25);
-  border-color: #9c1d96;
+  box-shadow: 0 0 0 0.2rem rgba(39, 38, 39, 0.25);
+  border-color: #424e5c;
 }
 
 .page-item.active .page-link {
