@@ -15,7 +15,7 @@ async function lireNaufrage(id) {
     })
 }
 
-async function mettreAJourNaufrage(idVictime,idBateau,id) {
+async function modifierNaufrage(idVictime,idBateau,id) {
     db.query(`UPDATE naufrages SET Naufrage_idVictime=${idVictime},Naufrage_idBateau=${idBateau} WHERE Naufrage_id=${id}`,(err,result) => {
         if (err) throw err;
     })
@@ -30,6 +30,6 @@ async function supprimerNaufrage(id) {
 module.exports = {
     creerNaufrage,
     lireNaufrage,
-    mettreAJourNaufrage,
+    modifierNaufrage,
     supprimerNaufrage
 }

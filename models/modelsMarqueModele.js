@@ -15,7 +15,7 @@ async function lireMarque(id) {
     })
 }
 
-async function MettreAJourMarque(idMarque,marque) {
+async function modifierMarque(idMarque,marque) {
     db.query(`UPDATE marques SET Marque_Nom=${marque} WHERE Marque_Id=${idMarque}`,(err,result) => {
         if (err) throw err;
     })
@@ -42,7 +42,7 @@ async function lireModele(id) {
     })
 }
 
-async function MettreAJourModele(idModele,modele) {
+async function modifierModele(idModele,modele) {
     db.query(`UPDATE modeles SET Modele_Nom=${modele} WHERE Modele_Id=${idModele}`,(err,result) => {
         if (err) throw err;
     })
@@ -57,11 +57,11 @@ async function SupprimerModele(id) {
 module.exports = {
     creerMarque,
     lireMarque,
-    MettreAJourMarque,
+    modifierMarque,
     SupprimerMarque,
     creerModele,
     lireModele,
-    MettreAJourModele,
+    modifierModele,
     SupprimerModele
 
 }

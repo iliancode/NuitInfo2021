@@ -17,7 +17,7 @@ async function lireBateau(id) {
     })
 }
 
-async function MettreAJourBateau(nom,modele,marque,id) {
+async function modifierBateau(nom,modele,marque,id) {
     let req = `UPDATE bateaux SET Bateau_Nom=${nom},`
     req += `Bateau_Modele=${modele},`
     req += `Bateau_Marque=${marque} `
@@ -36,6 +36,6 @@ async function SupprimerBateau(id) {
 module.exports = {
     creerBateau,
     lireBateau,
-    MettreAJourBateau,
+    modifierBateau,
     SupprimerBateau
 };
