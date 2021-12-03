@@ -33,7 +33,7 @@ module.exports = {
     },
 
     afficher_listeSauveuteurs: function (req, res) {
-        res.render('./listeSauveuteur')
+        res.render('./listeSauveuteurs')
     },
 
     afficher_listeSauvetages: function (req, res) {
