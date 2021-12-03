@@ -48,20 +48,20 @@
                                                     <ul class="list-inline m-0">
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-primary btn-sm rounded-0" type="button"
-                                                                data-toggle="modal" data-target="#detail_50"
+                                                                data-toggle="modal" data-target="#detail_"
                                                                 title="Détails"><i class="fa fa-eye"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-success btn-sm rounded-0" type="button"
                                                                 title="Modifier"
-                                                                onclick="location.href = '/sautheuhz/fiche_client/50';"><i
+                                                                onclick="location.href = 'modifierBateau/';"><i
                                                                     class="fa fa-edit"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
         
                                                             <button class="btn btn-danger btn-sm rounded-0" type="button"
                                                                 data-toggle="modal"
-                                                                data-target="#supprimer_50"
+                                                                data-target="#supprimer_"
                                                                 title="Supprimer"><i class="fa fa-trash"></i></button>
                                                             </form>
                                                         </li>
@@ -89,11 +89,11 @@
         
                                 
                                     <!-- Détails -->
-                                    <div class="modal fade" id="detail_50">
+                                    <div class="modal fade" id="detail_">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Détails client n°50
+                                                    <h5 class="modal-title">Détails client N°
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
@@ -103,54 +103,32 @@
                                                     <p><b>Nom : </b>
                                                         DONALD
                                                     </p>
-                                                    <p><b>Prénom : </b>
+                                                    <p><b>Marque : </b>
                                                         yorick
                                                     </p>
-                                                    <p><b>Email : </b>
+                                                    <p><b>Modele : </b>
                                                         test@exemple.fr
                                                     </p>
-                                                    <p><b>Tél : </b>
+                                                    <p><b>Type : </b>
                                                         <span id="dispTel">0666666666</span>
-                                                    </p>
-                                                    <p><b>Sexe : </b>
-                                                        M
-                                                    </p>
-                                                    <p><b>Date de naissance : </b>
-                                                        07/12/2002 (18 ans)
-                                                    </p>
-                                                    <p><b>Ville : </b>
-                                                        GRENOBLE
-                                                    </p>
-                                                    <p><b>Code postal : </b>
-                                                        38100
-                                                    </p>
-                                                    <p><b>Adresse : </b>
-                                                        22AvenueTest
-                                                    </p>
-                                                    <p><b>N° sécurité social : </b>
-                                                            6666666666666
-                                                        
-                                                    </p>
-                                                    <p><b>Mutuelle: </b>
-                                                        MACIF
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Fermer</button>
                                                     <button type="button" class="btn btn-primary"
-                                                        onclick="location.href = 'fiche_client/50';">Fiche</button>
+                                                        onclick="location.href = 'modifierBateau/';">Fiche</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
         
                                     <!-- Supprimer -->
-                                    <div class="modal fade" id="supprimer_50">
+                                    <div class="modal fade" id="supprimer_">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Supprimer client n°50
+                                                    <h5 class="modal-title">Supprimer bateau n°
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
@@ -158,12 +136,12 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <p>
-                                                        Êtes-vous sûr de vouloir supprimer ce client ?</p>
+                                                        Êtes-vous sûr de vouloir supprimer ce bateau ?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-success"
                                                         data-dismiss="modal">Non</button>
-                                                    <form action="/sautheuhz/delete_client/50"
+                                                    <form action="suprr_bateau/"
                                                         method="post">
                                                         <button type="submit" class="btn btn-danger" name="supp"
                                                             value="supp">Oui</button>
