@@ -1,169 +1,199 @@
 <%- include('header') %>
-    <!-- sidebar-wrapper  -->
-    <main class="page-content">
-        <div class="container-fluid">
-            <div class="container">
-
-
-
-                <!-- Titre -->
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-xl-12 col-md-12 mt-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h1 class="">Modifier un sauvetage</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <form action="/sautheuhz/form_ordonnance" method="POST" class="container" id="needs-validation"
-                        name="form_ordonnance" novalidate>
-
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12 col-12">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="selectEquipe">Equipe</label>
-                                    <select class="custom-select d-block form-control" id="selectEquipe"
-                                        name="selectEquipe" required>
-                                        <option value="" disabled selected>Choisir une équipe</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir une marque valide.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-8 col-sm-12 col-8">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="inputMoyen">Moyen</label>
-                                    <input type="text" class="form-control" id="inputMoyen" name="inputMoyen"
-                                        placeholder="Moyen" required>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir un moyen valide.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-sm-12 col-4">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="inputNb">Nombre de naufragés</label>
-                                    <input type="number" class="form-control" id="inputNb" name="inputNb"
-                                        placeholder="Nombre de naufragés" required>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir un moyen valide.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Date de préscription -->
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12 col-12">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="inputDate">Date de sauvetage</label>
-                                    <input type="date" class="form-control" id="inputDate" name="inputDate"
-                                        min="1997-01-01" max="2030-12-31" placeholder="jj/mm/aaaa" required>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir une date valide.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-12 col-6">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="inputLong">Longitude</label>
-                                    <input type="text" class="form-control" id="inputLong" name="inputLong"
-                                        placeholder="Longitude" required>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir une longitude valide.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-12 col-6">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="inputLatitude">Latitude</label>
-                                    <input type="text" class="form-control" id="inputLatitude" name="inputLatitude"
-                                        placeholder="Latitude" required>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir une latitude valide.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12 col-12">
-                                <div class="form-group">
-                                    <label class="text-inverse" for="inputArticle">Lien article</label>
-                                    <input type="text" class="form-control" id="inputArticle" name="inputArticle"
-                                        placeholder="Lien article" required>
-                                    <div class="invalid-feedback">
-                                        Veuillez fournir un lien valide.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <fieldset class="border p-2">
-                            <legend class="w-auto">Nofragés</legend>
-
-                            <div class="formDynamique">
-                                <div class="entry mb-5">
-
-                                    <div class="row" style="margin-top: -10px; margin-bottom: -20px;">
-                                        <div class="col-sm-12 col-xl-6">
-                                            <label class="text-inverse">Nom</label>
-                                            <input type="text" class="form-control" name="inputNomNofrage[]"
-                                                placeholder="Nom" required>
-                                            <div class="invalid-feedback">
-                                                Veuillez fournir un nom valide.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-xl-6">
-                                            <label class="text-inverse">Prenom</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="inputPrenomNofrage[]"
-                                                    placeholder="Prénom" required>
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-success btn-add btnevent" type="button">
-                                                        <span>+</span>
-                                                    </button>
-                                                </span>
-                                                <div class="invalid-feedback">
-                                                    Veuillez fournir une date valide.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </fieldset>
-
-
-
-                        <!-- Validation du formulaire -->
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12 col-12 text-center">
-                                <button class="btn btn-primary" style="width: 100%;" type="submit">Valider le
-                                    formulaire</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<!-- sidebar-wrapper  -->
+<main class="page-content">
+  <div class="container-fluid">
+    <div class="container">
+      <!-- Titre -->
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-xl-12 col-md-12 mt-3">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="">Modifier un sauvetage</h1>
             </div>
+          </div>
         </div>
-    </main>
+      </div>
 
-    <%- include('footer') %>
+      <div class="row mt-3">
+        <form
+          action="/sautheuhz/form_ordonnance"
+          method="POST"
+          class="container"
+          id="needs-validation"
+          name="form_ordonnance"
+          novalidate
+        >
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label class="text-inverse" for="selectEquipe">Equipe</label>
+                <select
+                  class="custom-select d-block form-control"
+                  id="selectEquipe"
+                  name="selectEquipe"
+                  required
+                >
+                  <option value="" disabled selected>Choisir une équipe</option>
+                </select>
+                <div class="invalid-feedback">Veuillez fournir une marque valide.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8 col-sm-12 col-8">
+              <div class="form-group">
+                <label class="text-inverse" for="inputMoyen">Moyen</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputMoyen"
+                  name="inputMoyen"
+                  placeholder="Moyen"
+                  required
+                />
+                <div class="invalid-feedback">Veuillez fournir un moyen valide.</div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 col-4">
+              <div class="form-group">
+                <label class="text-inverse" for="inputNb">Nombre de naufragés</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputNb"
+                  name="inputNb"
+                  placeholder="Nombre de naufragés"
+                  required
+                />
+                <div class="invalid-feedback">Veuillez fournir un moyen valide.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Date de préscription -->
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label class="text-inverse" for="inputDate">Date de sauvetage</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="inputDate"
+                  name="inputDate"
+                  min="1997-01-01"
+                  max="2030-12-31"
+                  placeholder="jj/mm/aaaa"
+                  required
+                />
+                <div class="invalid-feedback">Veuillez fournir une date valide.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-6">
+              <div class="form-group">
+                <label class="text-inverse" for="inputLong">Longitude</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputLong"
+                  name="inputLong"
+                  placeholder="Longitude"
+                  required
+                />
+                <div class="invalid-feedback">Veuillez fournir une longitude valide.</div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-6">
+              <div class="form-group">
+                <label class="text-inverse" for="inputLatitude">Latitude</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputLatitude"
+                  name="inputLatitude"
+                  placeholder="Latitude"
+                  required
+                />
+                <div class="invalid-feedback">Veuillez fournir une latitude valide.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label class="text-inverse" for="inputArticle">Lien article</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputArticle"
+                  name="inputArticle"
+                  placeholder="Lien article"
+                  required
+                />
+                <div class="invalid-feedback">Veuillez fournir un lien valide.</div>
+              </div>
+            </div>
+          </div>
+
+          <fieldset class="border p-2">
+            <legend class="w-auto">Nofragés</legend>
+
+            <div class="formDynamique">
+              <div class="entry mb-5">
+                <div class="row" style="margin-top: -10px; margin-bottom: -20px">
+                  <div class="col-sm-12 col-xl-6">
+                    <label class="text-inverse">Nom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="inputNomNofrage[]"
+                      placeholder="Nom"
+                      required
+                    />
+                    <div class="invalid-feedback">Veuillez fournir un nom valide.</div>
+                  </div>
+
+                  <div class="col-sm-12 col-xl-6">
+                    <label class="text-inverse">Prenom</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="inputPrenomNofrage[]"
+                        placeholder="Prénom"
+                        required
+                      />
+                      <span class="input-group-btn">
+                        <button class="btn btn-success btn-add btnevent" type="button">
+                          <span>+</span>
+                        </button>
+                      </span>
+                      <div class="invalid-feedback">Veuillez fournir une date valide.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Validation du formulaire -->
+          <hr />
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-12 text-center">
+              <button class="btn btn-secondary" style="width: 100%" type="submit">
+                Valider le formulaire
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('footer') %>
