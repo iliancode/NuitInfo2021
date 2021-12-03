@@ -10,6 +10,9 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css" />
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -37,7 +40,7 @@
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="fa fa-tachometer-alt"></i>
+                  <i class="fas fa-ship"></i>
                   <span>Les bateaux</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -54,7 +57,7 @@
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="fa fa-shopping-cart"></i>
+                  <i class="fas fa-user"></i>
                   <span>Les sauveteurs</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -72,7 +75,7 @@
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="fa fa-shopping-cart"></i>
+                  <i class="fas fa-users"></i>
                   <span>Les équipes</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -90,7 +93,7 @@
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="far fa-gem"></i>
+                  <i class="fas fa-anchor"></i>
                   <span>Les sauvetages</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -104,13 +107,29 @@
                   </ul>
                 </div>
               </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fas fa-medkit"></i>
+                  <span>Les naufragés</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="liste_naufrages">Liste des naufragés</a>
+                    </li>
+                    <li>
+                      <a href="liste_victime">Liste des victimes</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
 
               <li class="header-menu">
                 <span>Extra</span>
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="fa fa-tachometer-alt"></i>
+                  <i class="fas fa-trademark"></i>
                   <span>Les marques</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -127,7 +146,7 @@
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="fa fa-tachometer-alt"></i>
+                  <i class="fas fa-tags"></i>
                   <span>Les modeles</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -161,7 +180,9 @@
 
                   function darkMode() {
                     let element = document.body;
+                    let input = document.input;
                     element.classList.toggle("dark-mode-back");
+                    element.classList.toggle("checked");
 
                     let theme = localStorage.getItem("theme");
                     if (theme && theme === "dark-mode-back") {
@@ -173,7 +194,7 @@
                     document.getElementById("theme").textContent = localStorage.getItem("theme");
                   }
                 </script>
-                <div id="theme"></div>
+                <div id="theme" style="display:none;"></div>
               </li>
             </ul>
           </div>
@@ -181,16 +202,16 @@
         <!-- sidebar-content  -->
         <div class="sidebar-footer">
           <a href="#">
-            <i class="fa fa-bell"></i>
+            <i class="fab fa-facebook"></i>
           </a>
           <a href="#">
-            <i class="fa fa-envelope"></i>
+            <i class="fab fa-twitter"></i>
           </a>
           <a href="#">
-            <i class="fa fa-cog"></i>
+            <i class="fab fa-instagram"></i>
           </a>
           <a href="#">
-            <i class="fa fa-power-off"></i>
+            <i class="fab fa-whatsapp"></i>
           </a>
         </div>
     </nav>

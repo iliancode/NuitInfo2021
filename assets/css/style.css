@@ -1,5 +1,6 @@
 :root {
   --dark-background-color: rgb(255, 255, 255);
+  --trans-transition-duration: 0.7s;
 }
 
 body {
@@ -7,19 +8,15 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(236, 236, 236);
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
   --dark-background-color: #303b46;
-  transition-duration: 0.7s;
-}
-
-.dark-mode-container {
-  background-color: #6d8097;
-  color: white;
+  --trans-transition-duration: 0s;
 }
 
 footer {
@@ -509,7 +506,7 @@ li.sidebar-dropdown {
 ----------------------------------------------------- */
 .card {
   background-color: var(--dark-background-color);
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .equal-height-container {
@@ -531,7 +528,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .first-b {
@@ -545,7 +542,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .first-b-2 {
@@ -553,7 +550,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 legend {
@@ -652,11 +649,19 @@ input:checked + .slider:before {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 0.2rem rgba(236, 28, 255, 0.25);
-  border-color: #9c1d96;
+  box-shadow: 0 0 0 0.2rem rgba(39, 38, 39, 0.25);
+  border-color: #424e5c;
 }
 
 .page-item.active .page-link {
   background-color: #6c757d;
   border-color: #6c757d;
+}
+
+.slider .round {
+  background:#424e5c
+}
+
+input:checked + .slider {
+  background-color: #424e5c;
 }
