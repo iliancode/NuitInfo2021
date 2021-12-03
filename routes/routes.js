@@ -23,6 +23,8 @@ routeur.get('/ajouter_sauveteur', ctrlSauveteur.afficher_ajouterSauveteur)
     .get('/modifier_sauveteur', ctrlSauveteur.afficher_modifierSauveteur)
     .get('/liste_sauveteurs', ctrlSauveteur.afficher_listeSauveteurs)
 
+    .post('/ajouter_sauveteur', ctrlSauveteur.executer_sauveteur)
+
 routeur.get('/ajouter_equipe', ctrlEquipe.afficher_ajouter_equipe)
     .get('/liste_equipes', ctrlEquipe.afficher_listeEquipes)
 
@@ -32,9 +34,12 @@ routeur.get('/ajouter_sauvetage', ctrlAccueil.afficher_ajouterSauvetage)
 
 routeur.get('/liste_modeles', ctrlMarqueModele.afficher_liste_modeles)
     .get('/ajouter_modele', ctrlMarqueModele.afficher_ajouter_modele)
+    .post('/ajouter_modele', ctrlMarqueModele.executer_model)
+
 
 routeur.get('/liste_marques', ctrlMarqueModele.afficher_liste_marques)
     .get('/ajouter_marque', ctrlMarqueModele.afficher_ajouter_marque)
+    .post('/ajouter_marque', ctrlMarqueModele.executer_marque)
 
 routeur.get('/liste_naufrages', ctrlNaufrage.afficher_liste_naufrages)
 

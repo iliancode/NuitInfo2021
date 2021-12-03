@@ -8,5 +8,16 @@ module.exports = {
     },
     afficher_listeSauveteurs: function (req, res) {
         res.render('./listeSauveteurs')
-    }
+    },
+    executer_sauveteur: function (req, res) {
+        let nom = req.body.inputNom;
+        let prenom = req.body.inputPrenom;
+
+    
+        modelSauveuteur.creerSauveteur(nom,prenom, function (data) {
+    
+        });
+        res.redirect("./liste_sauveteurs");
+      },
+    
 }
