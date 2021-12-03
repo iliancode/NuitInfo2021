@@ -11,6 +11,12 @@ module.exports = {
     },
     afficher_ajouter_modele: function (req, res) {
         res.render('./ajouter_modele')
+    },
+    afficher_modifier_marque: function (req, res) {
+        res.render('./ajouterMarque')
+    },
+    afficher_modifier_modele: function (req, res) {
+        res.render('./ajouterModele')
     }
 
     
