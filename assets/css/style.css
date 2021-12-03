@@ -12,7 +12,7 @@ body {
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
-  --dark-background-color: rgb(78, 78, 78);
+  --dark-background-color: #303b46;
 }
 
 .dark-mode-container {
@@ -505,6 +505,9 @@ li.sidebar-dropdown {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
+.card {
+  background-color: var(--dark-background-color);
+}
 
 .equal-height-container {
   width: 100%;
