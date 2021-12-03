@@ -1,6 +1,6 @@
 var db = require("../config/database");
 
-async function creerBateau(nom, idMarque, idModele, type, constructeur) {
+async function creerBateau(nom, idMarque, idModele, type) {
   let req = `INSERT INTO bateaux (Bateau_Nom,Bateau_idMarque,Bateau_idModele,Bateau_Type)`;
   req += ` VALUES ('${nom}',${idMarque},${idModele},'${type}')`;
   db.query(req, (err, result) => {
@@ -33,9 +33,18 @@ async function SupprimerBateau(id) {
     })
 }
 
+async function recupererBateau() {
+    return new Promise ((resolve,reject) => {
+        db.query(`SELECT * FROM bateaux, marques, modeles WHERE Bateau_idMarque=Marque_Id AND Bateau_idModele=Modele_id`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
 module.exports = {
     creerBateau,
     lireBateau,
     modifierBateau,
-    SupprimerBateau
+    SupprimerBateau,
+    recupererBateau
 };

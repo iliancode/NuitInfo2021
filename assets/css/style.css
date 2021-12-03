@@ -1,5 +1,7 @@
 :root {
   --dark-background-color: rgb(255, 255, 255);
+  --trans-transition-duration: 0.7s;
+  --color-color: white;
 }
 
 body {
@@ -7,19 +9,16 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(236, 236, 236);
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
+  font-family: "Open Sans", sans-serif;
 }
 
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
+  --color-color:white;
   --dark-background-color: #303b46;
-  transition-duration: 0.7s;
-}
-
-.dark-mode-container {
-  background-color: #6d8097;
-  color: white;
+  --trans-transition-duration: 0s;
 }
 
 footer {
@@ -509,7 +508,7 @@ li.sidebar-dropdown {
 ----------------------------------------------------- */
 .card {
   background-color: var(--dark-background-color);
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .equal-height-container {
@@ -531,7 +530,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .first-b {
@@ -545,7 +544,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 .first-b-2 {
@@ -553,7 +552,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-  transition-duration: 0.5s;
+  transition-duration: var(--trans-transition-duration);
 }
 
 legend {
@@ -652,11 +651,47 @@ input:checked + .slider:before {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 0.2rem rgba(236, 28, 255, 0.25);
-  border-color: #9c1d96;
+  box-shadow: 0 0 0 0.2rem rgba(39, 38, 39, 0.25);
+  border-color: #424e5c;
 }
 
 .page-item.active .page-link {
   background-color: #6c757d;
   border-color: #6c757d;
+}
+
+.slider .round {
+  background: #424e5c;
+}
+
+input:checked + .slider {
+  background-color: #424e5c;
+}
+
+
+
+.modal-content {
+  color: black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--dark-background-color);
+    background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }

@@ -11,7 +11,7 @@
                     <div class="col-xl-12 col-md-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <h1 class="">Liste des équipes</h1>
+                                <h1 class="">Liste des naufragés</h1>
                             </div>
                         </div>
                     </div>
@@ -20,8 +20,8 @@
                 <!-- Bouton -->
                 <div class="row mt-3">
                     <div class="col-lg-12 col-sm-12 col-12 text-center">
-                        <button class="btn btn-secondary" style="width: 100%;" onclick="location.href = 'ajouter_equipe';">Ajouter une
-                            équipe</button>
+                        <button class="btn btn-secondary" style="width: 100%;" onclick="location.href = 'ajouter_naufrage';">Ajouter un
+                            bateau</button>
                     </div>
                 </div>
         
@@ -35,9 +35,9 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">Action</th>
-                                            <th scope="col">Sauvteurs</th>
-                                            <th scope="col">Nombre de sauvetages</th>
-                                            <th scope="col">Nombre sauvé</th>
+                                            <th scope="col">Victimes</th>
+                                            <th scope="col">Equipe sauveteurs</th>
+                                            <th scope="col">Bateau</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,20 +47,20 @@
                                                     <ul class="list-inline m-0">
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-secondary btn-sm rounded-0" type="button"
-                                                                data-toggle="modal" data-target="#detail_50"
+                                                                data-toggle="modal" data-target="#detail_"
                                                                 title="Détails"><i class="fa fa-eye"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-success btn-sm rounded-0" type="button"
                                                                 title="Modifier"
-                                                                onclick="location.href = '/sautheuhz/fiche_client/50';"><i
+                                                                onclick="location.href = 'modifierNaufrage/';"><i
                                                                     class="fa fa-edit"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
         
                                                             <button class="btn btn-danger btn-sm rounded-0" type="button"
                                                                 data-toggle="modal"
-                                                                data-target="#supprimer_50"
+                                                                data-target="#supprimer_"
                                                                 title="Supprimer"><i class="fa fa-trash"></i></button>
                                                             </form>
                                                         </li>
@@ -71,10 +71,11 @@
                                                         yorick (18)
                                                 </td>
                                                 <td>
-                                                    M
+                                                    DONALD
+                                                        yorick (18)
                                                 </td>
-                                                <td class="dispTel">
-                                                    0666666666
+                                                <td>
+                                                    M
                                                 </td>
                                             </tr>
         
@@ -84,68 +85,43 @@
         
                                 
                                     <!-- Détails -->
-                                    <div class="modal fade" id="detail_50">
+                                    <div class="modal fade" id="detail_">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Détails client n°50
+                                                    <h5 class="modal-title">Détails naufrage N°
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p><b>Nom : </b>
+                                                    <p><b>Victimes : </b>
                                                         DONALD
                                                     </p>
-                                                    <p><b>Prénom : </b>
+                                                    <p><b>Equipe sauveteurs : </b>
                                                         yorick
                                                     </p>
-                                                    <p><b>Email : </b>
+                                                    <p><b>Bateau : </b>
                                                         test@exemple.fr
-                                                    </p>
-                                                    <p><b>Tél : </b>
-                                                        <span id="dispTel">0666666666</span>
-                                                    </p>
-                                                    <p><b>Sexe : </b>
-                                                        M
-                                                    </p>
-                                                    <p><b>Date de naissance : </b>
-                                                        07/12/2002 (18 ans)
-                                                    </p>
-                                                    <p><b>Ville : </b>
-                                                        GRENOBLE
-                                                    </p>
-                                                    <p><b>Code postal : </b>
-                                                        38100
-                                                    </p>
-                                                    <p><b>Adresse : </b>
-                                                        22AvenueTest
-                                                    </p>
-                                                    <p><b>N° sécurité social : </b>
-                                                            6666666666666
-                                                        
-                                                    </p>
-                                                    <p><b>Mutuelle: </b>
-                                                        MACIF
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Fermer</button>
                                                     <button type="button" class="btn btn-secondary"
-                                                        onclick="location.href = 'fiche_client/50';">Fiche</button>
+                                                        onclick="location.href = 'modifierNaufrage/';">Fiche</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
         
                                     <!-- Supprimer -->
-                                    <div class="modal fade" id="supprimer_50">
+                                    <div class="modal fade" id="supprimer_">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Supprimer client n°50
+                                                    <h5 class="modal-title">Supprimer naufrage n°
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
@@ -153,12 +129,12 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <p>
-                                                        Êtes-vous sûr de vouloir supprimer ce client ?</p>
+                                                        Êtes-vous sûr de vouloir supprimer ce naufrage ?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-success"
                                                         data-dismiss="modal">Non</button>
-                                                    <form action="/sautheuhz/delete_client/50"
+                                                    <form action="suprr_nauffrage/"
                                                         method="post">
                                                         <button type="submit" class="btn btn-danger" name="supp"
                                                             value="supp">Oui</button>

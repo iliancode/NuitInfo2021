@@ -26,10 +26,19 @@ async function supprimerSauveteur(id) {
         if (err) throw err;
     })
 }
+async function recupererSauveteur() {
+    return new Promise((resolve,reject) => {
+        db.query(`SELECT * FROM sauveteurs`),(err,result) => {
+            return resolve(result)
+        }
+    })
+} 
+
 
 module.exports = {
     creerSauveteur,
     lireSauveteur,
     modifierSauveteur,
-    supprimerSauveteur
+    supprimerSauveteur,
+    recupererSauveteur
 }
