@@ -1,6 +1,6 @@
 var db = require("../config/database");
 
-async function creerBateau(nom, idMarque, idModele, type, constructeur) {
+async function creerBateau(nom, idMarque, idModele, type) {
   let req = `INSERT INTO bateaux (Bateau_Nom,Bateau_idMarque,Bateau_idModele,Bateau_Type)`;
   req += ` VALUES ('${nom}',${idMarque},${idModele},'${type}')`;
   db.query(req, (err, result) => {

@@ -3,6 +3,8 @@ const express = require("express");
 
 // activer les dépendances
 let app = express();
+app.use(express.urlencoded());
+
 app.set("view engine", "ejs");
 app.use(express.static("views"));
 
