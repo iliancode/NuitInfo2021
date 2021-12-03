@@ -173,8 +173,13 @@
                 </a>
               </li>
               <li>
-                <button onclick="darkMode()">Dark Mode</button>
-
+                <a href="#">
+                  <label class="switch">
+                    <input type="checkbox" onclick="darkMode()">
+                    <span class="slider round"></span>
+                  </label>
+                  <span>Dark Mode</span>
+                </a>
                 <script>
                 function darkMode() {
                   var back = document.body;
