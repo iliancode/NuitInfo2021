@@ -135,11 +135,29 @@
                   <span>Dark Mode</span>
                 </a>
                 <script>
-                function darkMode() {
-                  var back = document.body;
-                  back.classList.toggle("dark-mode-back");
-                }
+                  (function() {
+                    let onpageLoad = localStorage.getItem("theme") || "";
+                    let element = document.body;
+                    element.classList.add(onpageLoad);
+                    document.getElementById("theme").textContent =
+                      localStorage.getItem("theme") || "";
+                  })();
+
+                  function darkMode() {
+                    let element = document.body;
+                    element.classList.toggle("dark-mode-back");
+
+                    let theme = localStorage.getItem("theme");
+                    if (theme && theme === "dark-mode-back") {
+                      localStorage.setItem("theme", "");
+                    } else {
+                      localStorage.setItem("theme", "dark-mode-back");
+                    }
+
+                    document.getElementById("theme").textContent = localStorage.getItem("theme");
+                  }
                 </script>
+                <div id="theme"></div>
               </li>
             </ul>
           </div>
