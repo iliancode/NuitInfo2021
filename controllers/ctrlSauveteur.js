@@ -10,7 +10,7 @@ module.exports = {
     let nom = req.body.inputNom;
     let prenom = req.body.inputPrenom;
 
-    modelSauveuteur.creerSauveteur(nom, prenom, function (data) {});
+    modelsSauveteur.creerSauveteur(nom, prenom, function (data) {});
     res.redirect("./liste_sauveteurs");
   },
 
