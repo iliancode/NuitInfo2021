@@ -7,12 +7,14 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(236, 236, 236);
+  transition-duration: 0.5s;
 }
 
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
-  --dark-background-color: rgb(78, 78, 78);
+  --dark-background-color: #303b46;
+  transition-duration: 0.7s;
 }
 
 .dark-mode-container {
@@ -505,6 +507,10 @@ li.sidebar-dropdown {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
+.card {
+  background-color: var(--dark-background-color);
+  transition-duration: 0.5s;
+}
 
 .equal-height-container {
   width: 100%;
@@ -525,6 +531,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
+  transition-duration: 0.5s;
 }
 
 .first-b {
@@ -538,6 +545,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
+  transition-duration: 0.5s;
 }
 
 .first-b-2 {
@@ -545,6 +553,7 @@ li.sidebar-dropdown {
   background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
+  transition-duration: 0.5s;
 }
 
 legend {
@@ -573,4 +582,81 @@ legend {
   #sidebarCollapse span {
     display: none;
   }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2.2px;
+  bottom: 1.6px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.rounded-0 {
+  height: 35px;
+  width: 35px;
+  margin-left: 0px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(236, 28, 255, 0.25);
+  border-color: #9c1d96;
+}
+
+.page-item.active .page-link {
+  background-color: #6c757d;
+  border-color: #6c757d;
 }

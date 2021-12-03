@@ -58,7 +58,7 @@ $(function () {
         dynaForm.find('.entry:not(:last) .btn-add')
             .removeClass('btn-add').addClass('btn-remove')
             .removeClass('btn-success').addClass('btn-danger')
-            .html('<span>Supprimer</span>');
+            .html('<span>x</span>');
     })
 
         .on('click', '.btn-remove', function (e) {
@@ -71,37 +71,24 @@ $(function () {
         });
 });
 
-var x = 1;
-$(function () {
-    $(document).on('click', '.btn-add2', function (e) {
-        e.preventDefault();
-        x += 1
+$('#selectModele').change(function() {
+  opt = $(this).val();
+  if (opt=="new") {
+      $('#msgbox').html(`
+      <input type="text" class="form-control" id="inputNewModel" name="inputNewModel"
+          placeholder="Nouvelle Marque" required />
+      <div class="invalid-feedback">Veuillez fournir un modele valid.</div>`);
+  }
+});
 
-        var dynaForm = $('.formDynamique2'),
-            currentEntry = $(this).parents('.entry2');
-        newEntry = (currentEntry.clone()).appendTo(dynaForm);
-
-        $("#compteur2").attr("id", "compteur2" + x);
-        $("#compteur2" + x).html(x - 1);
-        $("#compteur2").attr("id", "compteur2").html(x);
-
-        newEntry.find('input').val('');
-        newEntry.find('select').val('');
-
-        dynaForm.find('.entry2:not(:last) .btn-add')
-            .removeClass('btn-add2').addClass('btn-remove2')
-            .removeClass('btn-success').addClass('btn-danger')
-            .html('<span>Supprimer</span>');
-    })
-
-        .on('click', '.btn-remove2', function (e) {
-            /*             i = i - 1
-                        $("#compteur").attr("id", "compteur").html(i); */
-            $(this).parents('.entry2:first').remove();
-
-            e.preventDefault();
-            return false;
-        });
+$('#selectMarque').change(function() {
+  opt = $(this).val();
+  if (opt=="new") {
+      $('#msgbox2').html(`
+      <input type="text" class="form-control" id="inputNewMarque" name="inputNewMarque"
+          placeholder="Nouveau Model" required />
+      <div class="invalid-feedback">Veuillez fournir une marque valid.</div>`);
+  }
 });
 
 

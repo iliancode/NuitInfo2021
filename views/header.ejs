@@ -26,7 +26,7 @@
     <nav id="sidebar" class="sidebar-wrapper">
       <div class="sidebar-content">
         <div class="sidebar-brand">
-          <a href="#">Sauveteur du Dunkerquois</a>
+          <a href="/">Sauveteur du Dunkerquois</a>
         </div>
         <div class="sidebar-header">
           <!-- sidebar-search  -->
@@ -101,86 +101,79 @@
                     <li>
                       <a href="ajouter_sauvetage">Ajouter un sauvetage</a>
                     </li>
-                    <li>
-                      <a href="#">Tables</a>
-                    </li>
-                    <li>
-                      <a href="#">Icons</a>
-                    </li>
-                    <li>
-                      <a href="#">Forms</a>
-                    </li>
                   </ul>
                 </div>
               </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-chart-line"></i>
-                  <span>Charts</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#">Pie chart</a>
-                    </li>
-                    <li>
-                      <a href="#">Line chart</a>
-                    </li>
-                    <li>
-                      <a href="#">Bar chart</a>
-                    </li>
-                    <li>
-                      <a href="#">Histogram</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-globe"></i>
-                  <span>Maps</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#">Google maps</a>
-                    </li>
-                    <li>
-                      <a href="#">Open street map</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+
               <li class="header-menu">
                 <span>Extra</span>
               </li>
-              <li>
+              <li class="sidebar-dropdown">
                 <a href="#">
-                  <i class="fa fa-book"></i>
-                  <span>Documentation</span>
+                  <i class="fa fa-tachometer-alt"></i>
+                  <span>Les marques</span>
                 </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="liste_marques">Liste des marques
+                      </a>
+                    </li>
+                    <li>
+                      <a href="ajouter_marque">Ajouter une marque</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-tachometer-alt"></i>
+                  <span>Les modeles</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="liste_modeles">Liste des modeles
+                      </a>
+                    </li>
+                    <li>
+                      <a href="ajouter_modele">Ajouter un modele</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li>
                 <a href="#">
-                  <i class="fa fa-calendar"></i>
-                  <span>Calendar</span>
+                  <label class="switch">
+                    <input type="checkbox" onclick="darkMode()">
+                    <span class="slider round"></span>
+                  </label>
+                  <span>Dark Mode</span>
                 </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-folder"></i>
-                  <span>Examples</span>
-                </a>
-              </li>
-              <li>
-                <button onclick="darkMode()">Dark Mode</button>
-
                 <script>
-                function darkMode() {
-                  var back = document.body;
-                  back.classList.toggle("dark-mode-back");
-                }
+                  (function() {
+                    let onpageLoad = localStorage.getItem("theme") || "";
+                    let element = document.body;
+                    element.classList.add(onpageLoad);
+                    document.getElementById("theme").textContent =
+                      localStorage.getItem("theme") || "";
+                  })();
+
+                  function darkMode() {
+                    let element = document.body;
+                    element.classList.toggle("dark-mode-back");
+
+                    let theme = localStorage.getItem("theme");
+                    if (theme && theme === "dark-mode-back") {
+                      localStorage.setItem("theme", "");
+                    } else {
+                      localStorage.setItem("theme", "dark-mode-back");
+                    }
+
+                    document.getElementById("theme").textContent = localStorage.getItem("theme");
+                  }
                 </script>
+                <div id="theme"></div>
               </li>
             </ul>
           </div>
