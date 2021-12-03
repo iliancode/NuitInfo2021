@@ -73,12 +73,48 @@
             <script>
               // Bar chart
               new Chart(document.getElementById("bar-chart"), {
-                type: 'bar',
+                type: 'line',
                 data: {
-                  labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                  labels: ["Décembre","Janvier","Février","Mars","Avril","Mai","Juin"],
+                                    datasets: [
+                    {
+                      label: "Nombre de sauvetages",
+                      backgroundColor: ["rgb(75, 192, 192)"],
+                      data: [278, 267, 734, 388, 543, 524, 231],
+                      borderColor: 'rgb(75, 192, 192)',
+                      tension: 0.3
+                    }
+                  ],
+                  
+                },
+                options: {
+          plugins: {
+            legend: {
+              display: true,
+              position: 'bottom',
+              align: 'start'
+            }
+          }
+        }
+              });
+            </script>
+
+            <!-- Table Right -->
+            <div class="first-b-2" id="dark">
+              <div class="p-3" style="height: auto; width: 380px;">
+                <canvas id="bar-chart2" width="auto" height="auto"></canvas>
+              </div>
+            </div>
+
+            <script>
+              // Bar chart
+              new Chart(document.getElementById("bar-chart2"), {
+                type: 'doughnut',
+                data: {
+                  labels: ["Equipe 1", "Equipe 2", "Equipe 3", "Equipe 4", "Equipe 5"],
                   datasets: [
                     {
-                      label: "Population (millions)",
+                      label: "Sauvetages",
                       backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                       data: [2478, 5267, 734, 784, 433]
                     }
@@ -94,40 +130,12 @@
               });
             </script>
 
-            <!-- Table Right -->
-            <div class="first-b-2" id="dark">
-              <div class="p-3" style="height: auto; width: 380px;">
-                <canvas id="bar-chart2" width="auto" height="auto"></canvas>
-              </div>
-            </div>
-            <script>
-              // Bar chart
-              new Chart(document.getElementById("bar-chart2"), {
-                type: 'doughnut',
-                data: {
-                  labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-                  datasets: [
-                    {
-                      label: "Population (millions)",
-                      backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                      data: [2478, 5267, 734, 784, 433]
-                    }
-                  ]
-                },
-                options: {
-                  legend: { display: false },
-                  title: {
-                    display: true,
-                    text: 'Predicted world population (millions) in 2050'
-                  }
-                }
-              });
-            </script>
+            
           </div>
         </div>
       </div>
       </div>
-      <%- include('footer') %>
+
 
     </main>
 
