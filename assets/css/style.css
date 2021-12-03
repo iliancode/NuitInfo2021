@@ -644,3 +644,9 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.rounded-0 {
+  height: 35px; 
+  width: 35px; 
+  margin-left: 0px; 
+}
