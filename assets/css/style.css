@@ -1,8 +1,23 @@
+:root {
+  --dark-background-color: rgb(255, 255, 255);
+}
+
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   /* background-color: rgb(236, 236, 236); */
+}
+
+.dark-mode-back {
+  background-color: #424e5c;
+  color: white;
+  --dark-background-color: rgb(78, 78, 78);
+}
+
+.dark-mode-container {
+  background-color: #6d8097;
+  color: white;
 }
 
 footer {
@@ -507,7 +522,7 @@ li.sidebar-dropdown {
 
 .first-a {
   margin: 10px 10px 5px 20px;
-  background-color: #ffffff;
+  background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
 }
@@ -519,22 +534,17 @@ li.sidebar-dropdown {
 }
 
 .first-b-1 {
-  background-color: #464667;
+  margin: 10px 10px 5px 20px;
+  background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
 }
 
 .first-b-2 {
-  background-color: #464667;
+  margin: 10px 10px 5px 5px;
+  background-color: var(--dark-background-color);
   flex: 1;
   border-radius: 20px;
-}
-
-.second {
-  background-color: #464667;
-  flex: 1;
-  border-radius: 20px;
-  padding: 0;
 }
 
 legend {
