@@ -33,9 +33,18 @@ async function SupprimerBateau(id) {
     })
 }
 
+async function recupererBateau() {
+    return new Promise ((resolve,reject) => {
+        db.query(`SELECT * FROM bateaux, marques, modeles WHERE Bateau_idMarque=Marque_Id AND Bateau_idModele=Modele_id`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
 module.exports = {
     creerBateau,
     lireBateau,
     modifierBateau,
-    SupprimerBateau
+    SupprimerBateau,
+    recupererBateau
 };

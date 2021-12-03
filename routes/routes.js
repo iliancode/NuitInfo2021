@@ -17,6 +17,8 @@ routeur.get('/ajouter_bateau', ctrlBateaux.afficher_ajouterBateau)
     .get('/modifier_bateau', ctrlBateaux.afficher_modifierBateau)   
     .get('/liste_bateaux', ctrlBateaux.afficher_listeBateaux)
     .post('/ajouter_bateau',ctrlBateaux.executer_form_bateau)
+    .post('/delete_ajouter_bateau/:id', ctrlBateaux.delete_fiche_medecin)
+
 routeur.get('/ajouter_sauveteur', ctrlSauveteur.afficher_ajouterSauveteur)
     .get('/modifier_sauveteur', ctrlSauveteur.afficher_modifierSauveteur)
     .get('/liste_sauveteurs', ctrlSauveteur.afficher_listeSauveteurs)
