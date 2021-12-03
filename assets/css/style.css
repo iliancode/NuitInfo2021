@@ -1,6 +1,7 @@
 :root {
   --dark-background-color: rgb(255, 255, 255);
   --trans-transition-duration: 0.7s;
+  --color-color: white;
 }
 
 body {
@@ -9,12 +10,13 @@ body {
   flex-direction: column;
   background-color: rgb(236, 236, 236);
   transition-duration: var(--trans-transition-duration);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
+  --color-color:white;
   --dark-background-color: #303b46;
   --trans-transition-duration: 0s;
 }
@@ -659,9 +661,37 @@ input:checked + .slider:before {
 }
 
 .slider .round {
-  background:#424e5c
+  background: #424e5c;
 }
 
 input:checked + .slider {
   background-color: #424e5c;
+}
+
+
+
+.modal-content {
+  color: black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--dark-background-color);
+    background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }
