@@ -161,7 +161,9 @@
 
                   function darkMode() {
                     let element = document.body;
+                    let input = document.input;
                     element.classList.toggle("dark-mode-back");
+                    element.classList.toggle("checked");
 
                     let theme = localStorage.getItem("theme");
                     if (theme && theme === "dark-mode-back") {
@@ -173,7 +175,7 @@
                     document.getElementById("theme").textContent = localStorage.getItem("theme");
                   }
                 </script>
-                <div id="theme"></div>
+                <div id="theme" style="display:none;"></div>
               </li>
             </ul>
           </div>
