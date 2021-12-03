@@ -71,6 +71,23 @@ async function recupererDernierIdModele() {
     })
 }
 
+async function recupererMarques() {
+    return new Promise((resolve,reject) => {
+        db.query(`SELECT * FROM marques`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
+
+async function recupererModele() {
+    return new Promise((resolve,reject) => {
+        db.query(`SELECT * FROM modeles`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
 module.exports = {
     creerMarque,
     lireMarque,
@@ -81,6 +98,9 @@ module.exports = {
     lireModele,
     modifierModele,
     SupprimerModele,
-    recupererDernierIdModele
+    recupererDernierIdModele,
+    recupererMarques,
+    recupererModele
+
 
 }

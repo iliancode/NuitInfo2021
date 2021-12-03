@@ -1,4 +1,4 @@
-/*var modelSauvetage = require('../models/');
-module.exports = {
-
-}*/
+let modelBateaux = require('../models/modelsBateaux');
+module.exports= {
+    
+}
