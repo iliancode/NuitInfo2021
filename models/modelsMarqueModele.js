@@ -27,8 +27,17 @@ async function SupprimerMarque(id) {
     })
 }
 
+async function recupererDernierIdMarque() {
+    return new Promise((resolve,reject) => {
+        db.query(`SELECT Marque_id FROM marques ORDER BY Marque_id DESC`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
+
 async function creerModele(modele) {
-    db.query(`INSERT INTO modeles (Modele_Nom) VALUES ('${modele})`,(err,result) => {
+    db.query(`INSERT INTO modeles (Modele_Nom) VALUES ('${modele}')`,(err,result) => {
         if (err) throw err;
     })
 }

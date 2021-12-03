@@ -1,13 +1,21 @@
 var db = require("../config/database");
 
-async function creerBateau(nom, idMarque, idModele, type, constructeur) {
+async function creerBateau(nom, idMarque, idModele, type) {
   let req = `INSERT INTO bateaux (Bateau_Nom,Bateau_idMarque,Bateau_idModele,Bateau_Type)`;
   req += ` VALUES ('${nom}',${idMarque},${idModele},'${type}')`;
   db.query(req, (err, result) => {
     if (err) throw err;
   });
 }
- 
+
+
+
+ await bateauModels.creerBateau(req.body.inputNom,)
+
+
+
+
+
 async function lireBateau(id) {
     return new Promise((resolve,reject) => {
         db.query(`SELECT * FROM bateaux WHERE Bateau_id=${id}`,(err,result) => {
