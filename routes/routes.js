@@ -21,8 +21,7 @@ routeur.get('/ajouter_sauveteur', ctrlSauveteur.afficher_ajouterSauveteur)
     .get('/modifier_sauveteur', ctrlSauveteur.afficher_modifierSauveteur)
     .get('/liste_sauveteurs', ctrlSauveteur.afficher_listeSauveteurs)
 
-routeur.get('/ajouter_equipe', ctrlEquipe.afficher_ajouterEquipe)
-    .get('/modifier_equipe', ctrlEquipe.afficher_modifierEquipe)
+routeur.get('/ajouter_equipe', ctrlEquipe.afficher_ajouter_equipe)
     .get('/liste_equipes', ctrlEquipe.afficher_listeEquipes)
 
 routeur.get('/ajouter_sauvetage', ctrlAccueil.afficher_ajouterSauvetage)

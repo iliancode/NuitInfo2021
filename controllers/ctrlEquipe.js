@@ -1,7 +1,7 @@
 var modelEquipe = require('../models/modelsEquipe');
 module.exports = {
     
-    afficher_modifierEquipe: function (req, res) {
+    afficher_ajouter_equipe: function (req, res) {
         res.render('./modifierEquipe')
     },
     
