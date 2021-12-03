@@ -660,3 +660,11 @@ input:checked + .slider:before {
   background-color: #6c757d;
   border-color: #6c757d;
 }
+
+.slider .round {
+  background:#424e5c
+}
+
+input:checked + .slider {
+  background-color: #424e5c;
+}
