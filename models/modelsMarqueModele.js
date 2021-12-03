@@ -62,15 +62,25 @@ async function SupprimerModele(id) {
         if (err) throw err;
     })
 }
+async function recupererDernierIdModele() {
+    return new Promise((resolve,reject) => {
+        db.query(`SELECT Modele_id FROM modeles ORDER BY Modele_id DESC`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
 
 module.exports = {
     creerMarque,
     lireMarque,
     modifierMarque,
     SupprimerMarque,
+    recupererDernierIdMarque,
     creerModele,
     lireModele,
     modifierModele,
-    SupprimerModele
+    SupprimerModele,
+    recupererDernierIdModele
 
 }

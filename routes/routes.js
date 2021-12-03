@@ -13,7 +13,7 @@ routeur.get('/', ctrlAccueil.afficher_accueil)
 routeur.get('/ajouter_bateau', ctrlBateaux.afficher_ajouterBateau)
     .get('/modifier_bateau', ctrlBateaux.afficher_modifierBateau)   
     .get('/liste_bateaux', ctrlBateaux.afficher_listeBateaux)
-
+    .post('/ajouter_bateau',ctrlBateaux.executer_form_bateau)
 routeur.get('/ajouter_sauveteur', ctrlSauveteur.afficher_ajouterSauveteur)
     .get('/modifier_sauveteur', ctrlSauveteur.afficher_modifierSauveteur)
     .get('/liste_sauveteurs', ctrlSauveteur.afficher_listeSauveteurs)
