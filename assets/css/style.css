@@ -1,6 +1,7 @@
 :root {
   --dark-background-color: rgb(255, 255, 255);
   --trans-transition-duration: 0.7s;
+  --color-color: white;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 .dark-mode-back {
   background-color: #424e5c;
   color: white;
+  --color-color:white;
   --dark-background-color: #303b46;
   --trans-transition-duration: 0s;
 }
@@ -664,4 +666,25 @@ input:checked + .slider:before {
 
 input:checked + .slider {
   background-color: #424e5c;
+}
+
+
+
+.modal-content {
+  color: black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--dark-background-color);
+    background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
 }
