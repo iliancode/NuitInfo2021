@@ -1,5 +1,5 @@
 var db = require("../config/database");
-
+/*
 async function creerSauvetage(idEquipe,nbNaufrage,idNaufrage,date,moyens,longitude,latitude,lienArticle) {
     let req = `INSERT INTO sauvetages (Sauvetage_idEquipe,Sauvetage_nbNaufrage,Sauvetage_idNaufrage,`
     req += `Sauvetage_date,Sauvetage_moyens,Sauvetage_moyens,Sauvetage_longitude,Sauvetage_latitude,Sauvetage_lienArticle`
@@ -39,10 +39,19 @@ async function supprimerSauvetage(id) {
         if (err) throw err;
     })
 }
-
+*/
+async function recupererSauvetage() {
+    return new Promise ((resolve,reject) => {
+        db.query(`SELECT * FROM sauvetages,equipes,naufrages WHERE Sauvetages_idEquipe = Equipe_id AND Sauvetages_idNaufrage = Naufrage_id`,(err,result) => {
+            if (err) throw err;
+            return resolve(result)
+        })
+    })
+}
 module.exports = {
-    creerSauvetage,
-    lireSauvetage,
-    modifierSauvetage,
-    supprimerSauvetage
+    //creerSauvetage,
+   // lireSauvetage,
+   /// modifierSauvetage,
+    //supprimerSauvetage
+    recupererSauvetage
 }

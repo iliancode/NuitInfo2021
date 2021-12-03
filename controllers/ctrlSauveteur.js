@@ -1,28 +1,43 @@
-var modelsSauveteur = require('../models/modelsSauveteur');
+var modelsSauveteur = require("../models/modelsSauveteur");
 module.exports = {
-    afficher_ajouterSauveteur: function (req, res) {
-        res.render('./ajouterSauveteur')
-    },
-    afficher_modifierSauveteur: function (req, res) {
-        res.render('./modifierSauveteur')
-    },
-    afficher_listeSauveteurs: function (req, res) {
-        res.render('./listeSauveteurs')
-    },
-    executer_sauveteur: function (req, res) {
-        let nom = req.body.inputNom;
-        let prenom = req.body.inputPrenom;
+  afficher_ajouterSauveteur: function (req, res) {
+    res.render("./ajouterSauveteur");
+  },
 
+  executer_sauveteur: function (req, res) {
+    let nom = req.body.inputNom;
+    let prenom = req.body.inputPrenom;
+
+    modelsSauveteur.creerSauveteur(nom, prenom, function (data) {});
+    res.redirect("./liste_sauveteurs");
+  },
+
+  afficher_listeSauveteurs: async function (req, res) {
+    modelsSauveteur.lireSauveteur(function (data) {
+      res.render("./liste_sauveteurs", { donnees: data });
+    });
+  },
+
+  afficher_modifierSauveteur: function (req, res) {
+    let id = req.params.id;
+    let nom = req.body.inputNom;
+    let prenom = req.body.inputPrenom;
     
-        modelSauveuteur.creerSauveteur(nom,prenom, function (data) {
-    
-        });
-        res.redirect("./liste_sauveteurs");
-      },
-    
-    
-    afficher_listeSauveteurs:async function (req,res) {
-        let donnees = await modelsSauveteur.recupererSauveteur();
-        res.render('./liste_sauveteurs', {donnees : donnees})
-    }
-}
+    modelsSauveteur.lireUnSauveteur(id,nom, prenom, function (data) {
+      console.log(data)
+      res.render("./modifierSauveteur", {
+        contenu: data,
+      });
+    });
+  },
+
+  modifier_sauveteur: function (req, res) {
+    let id = res.params.id;
+    let nom = req.body.inputNom;
+    let prenom = req.body.inputPrenom;
+
+    modelsSauveteur.modifierSauveteur(nom, prenom, id, function (data) {
+      res.redirect("./liste_sauveteurs", { contenu: data });
+    });
+  },
+};

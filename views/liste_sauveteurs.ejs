@@ -47,20 +47,20 @@
                                                     <ul class="list-inline m-0">
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-secondary btn-sm rounded-0" type="button"
-                                                                data-toggle="modal" data-target="#detail_"
+                                                                data-toggle="modal" data-target="#detail_<%= user.Sauveteur_id %>"
                                                                 title="Détails"><i class="fa fa-eye"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
                                                             <button class="btn btn-success btn-sm rounded-0" type="button"
                                                                 title="Modifier"
-                                                                onclick="location.href = '/modifierSauveteur/';"><i
+                                                                onclick="location.href = '/modifierSauveteur/<%= user.Sauveteur_id %>';"><i
                                                                     class="fa fa-edit"></i></button>
                                                         </li>
                                                         <li class="list-inline-item">
         
                                                             <button class="btn btn-danger btn-sm rounded-0" type="button"
                                                                 data-toggle="modal"
-                                                                data-target="#supprimer_"
+                                                                data-target="#supprimer_<%= user.Sauveteur_id %>"
                                                                 title="Supprimer"><i class="fa fa-trash"></i></button>
                                                             </form>
                                                         </li>
@@ -80,8 +80,9 @@
                                 </table>
         
                                 
+                                <% donnees.forEach(function(user){ %>
                                     <!-- Détails -->
-                                    <div class="modal fade" id="detail_50">
+                                    <div class="modal fade" id="detail_<%= user.Sauveteur_id %>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -93,56 +94,28 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <p><b>Nom : </b>
-                                                        DONALD
+                                                        <%= user.Sauveteur_nom %>
                                                     </p>
                                                     <p><b>Prénom : </b>
-                                                        yorick
-                                                    </p>
-                                                    <p><b>Email : </b>
-                                                        test@exemple.fr
-                                                    </p>
-                                                    <p><b>Tél : </b>
-                                                        <span id="dispTel">0666666666</span>
-                                                    </p>
-                                                    <p><b>Sexe : </b>
-                                                        M
-                                                    </p>
-                                                    <p><b>Date de naissance : </b>
-                                                        07/12/2002 (18 ans)
-                                                    </p>
-                                                    <p><b>Ville : </b>
-                                                        GRENOBLE
-                                                    </p>
-                                                    <p><b>Code postal : </b>
-                                                        38100
-                                                    </p>
-                                                    <p><b>Adresse : </b>
-                                                        22AvenueTest
-                                                    </p>
-                                                    <p><b>N° sécurité social : </b>
-                                                            6666666666666
-                                                        
-                                                    </p>
-                                                    <p><b>Mutuelle: </b>
-                                                        MACIF
+                                                        <%= user.Sauveteur_prenom %>
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Fermer</button>
                                                     <button type="button" class="btn btn-secondary"
-                                                        onclick="location.href = '/modifierSauveteur/';">Fiche</button>
+                                                        onclick="location.href = '/modifierSauveteur/<%= user.Sauveteur_id %>';">Fiche</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
         
                                     <!-- Supprimer -->
-                                    <div class="modal fade" id="supprimer_">
+                                    <div class="modal fade" id="supprimer_<%= user.Sauveteur_id %>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Supprimer sauveteur n°
+                                                    <h5 class="modal-title">Supprimer sauveteur n°<%= user.Sauveteur_id %>
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true" style="cursor: pointer;">&times;</span>
@@ -155,7 +128,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-success"
                                                         data-dismiss="modal">Non</button>
-                                                    <form action="/suppr_sauveteur/"
+                                                    <form action="/suppr_sauveteur/<%= user.Sauveteur_id %>"
                                                         method="post">
                                                         <button type="submit" class="btn btn-danger" name="supp"
                                                             value="supp">Oui</button>
@@ -164,6 +137,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <% })%>  
                                     
                             </div>
                         </div>
@@ -173,4 +147,3 @@
         </div>
     </main>
     <%- include('footer') %>
-

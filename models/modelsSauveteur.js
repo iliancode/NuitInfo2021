@@ -6,15 +6,6 @@ async function creerSauveteur(nom,prenom) {
     })
 }
 
-async function lireSauveteur(id) {
-    return new Promise((resolve,reject) => {
-        db.query(`SELECT * FROM sauveteurs WHERE Sauveteur_id=${id}`,(err,result) => {
-            if (err) throw err;
-            return resolve(result);
-        })
-    })
-}
-
 async function modifierSauveteur(nom,prenom,id) {
     db.query(`UPDATE sauveteures SET nom=${nom},prenom=${prenom} WHERE Sauveteur_id=${id}`,(err,result) => {
         if (err) throw err;
@@ -37,8 +28,22 @@ async function recupererSauveteur() {
 
 module.exports = {
     creerSauveteur,
-    lireSauveteur,
     modifierSauveteur,
     supprimerSauveteur,
-    recupererSauveteur
+    recupererSauveteur,
+
+    lireSauveteur: function (callback) {
+        var sql = 'SELECT * FROM sauveteurs';
+        db.query(sql, function (err, data, fields) {
+            if (err) throw err;
+            return callback(data);
+        });
+    },
+    lireUnSauveteur: function (callback) {
+        var sql = 'SELECT * FROM sauveteurs WHERE Sauveteur_id = ?';
+        db.query(sql, myID, function(err,data,fields){
+            if(err)throw err;
+            return callback(data);
+        });
+    },
 }
