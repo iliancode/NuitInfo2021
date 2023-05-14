@@ -1,0 +1,10 @@
+{
+   "version": 2,
+   "name": "nuit-info-2021",
+   "builds": [
+      { "src": "app.js", "use": "@vercel/node" }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/app.js" }
+   ]
+}
