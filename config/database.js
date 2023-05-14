@@ -6,7 +6,7 @@ var conn = mysql.createConnection({
   database: "nuitinfo",
 });
 conn.connect(function (err) {
-  if (err) throw err;
+ // if (err) throw err;
   console.log("BDD connecté avec succès !");
 });
 module.exports = conn;
