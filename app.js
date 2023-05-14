@@ -6,6 +6,7 @@ let app = express();
 app.use(express.urlencoded());
 
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static("views"));
 
 app.use("/images", express.static(__dirname + "/assets/images")); // redirect CSS bootstrap
